@@ -7,10 +7,12 @@ import PostShow from "./pages/posts/post-show.tsx";
 import UserShow from "./pages/users/user-show.tsx";
 import PostEdit from "./pages/posts/post-edit.tsx";
 import PostCreate from "./pages/posts/post-create.tsx";
+import ArticleIcon from "@mui/icons-material/Article";
+import PersonIcon from "@mui/icons-material/Person";
 
 export const App = () => (
   <Admin layout={Layout} dataProvider={dataProvider}>
-    <Resource name="posts" list={PostList} show={PostShow} edit={PostEdit} create={PostCreate} />
-    <Resource name="users" list={UserList} show={UserShow} />
+    <Resource icon={ArticleIcon} name="posts" list={PostList} show={PostShow} edit={PostEdit} create={PostCreate} />
+    <Resource icon={PersonIcon} name="users" list={UserList} show={UserShow} />
   </Admin>
 );

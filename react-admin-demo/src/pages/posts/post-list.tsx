@@ -1,13 +1,14 @@
-import { Datagrid, List, ReferenceField, TextField } from 'react-admin';
+import { Datagrid, List, ReferenceField, TextField, SimpleList } from 'react-admin';
 
 const PostList = () => (
   <List>
-    <Datagrid>
-      <ReferenceField source="userId" reference="users" />
-      <TextField source="id" />
-      <TextField source="title" />
-      <TextField source="body" />
-    </Datagrid>
+    {/*<Datagrid>*/}
+    {/*  <TextField source="id" />*/}
+    {/*  <TextField source="title" />*/}
+    {/*  <TextField source="body" />*/}
+    {/*  <ReferenceField source="userId" reference="users" />*/}
+    {/*</Datagrid>*/}
+    <SimpleList primaryText={(record)=>record.title} secondaryText={(record)=>record.body}/>
   </List>
 );
 

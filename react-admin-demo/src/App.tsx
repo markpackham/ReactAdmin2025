@@ -1,13 +1,13 @@
 import {
   Admin,
   Resource,
-  ListGuesser,
-  EditGuesser,
-  ShowGuesser,
 } from "react-admin";
 import { Layout } from "./Layout";
 import { dataProvider } from "./dataProvider";
+import PostList from "./pages/posts/post-list.tsx";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider}></Admin>
+  <Admin layout={Layout} dataProvider={dataProvider}>
+    <Resource name="posts" list={PostList} />
+  </Admin>
 );

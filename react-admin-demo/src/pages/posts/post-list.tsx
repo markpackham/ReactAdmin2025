@@ -1,4 +1,4 @@
-import { Datagrid, List, ReferenceField, TextField, SimpleList, FunctionField, useRecordContext } from 'react-admin';
+import { Datagrid, List, ReferenceField, TextField, FunctionField } from 'react-admin';
 
 // const PostPanel = () =>{
 //   const record = useRecordContext();

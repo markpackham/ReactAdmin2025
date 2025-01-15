@@ -23,5 +23,11 @@ export const authProvider: AuthProvider = {
       return Promise.reject();
     }
     return Promise.resolve();
-  }
+  },
+  // Runs when user nagivates to a new location to check for authentication
+  checkAuth: ()=>{
+    // Reject user if their username is not in localStorage
+    return localStorage.getItem('username') ? Promise.resolve() : Promise.reject();
+  },
+  // Runs when user navigates to a new location to check for permissions or rules
 };

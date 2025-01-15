@@ -15,6 +15,13 @@ export const authProvider: AuthProvider = {
     // Remove username from local storage
     localStorage.removeItem('username');
     return Promise.resolve();
-  }
+  },
   // Runs when API returns an error
+  checkError: ({status}:{status:number}) => {
+    if(status === 401 || status 403){
+      localStorage.removeItem('username');
+      return Promise.reject();
+    }
+    return Promise.resolve();
+  }
 };

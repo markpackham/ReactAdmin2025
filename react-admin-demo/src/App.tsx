@@ -10,10 +10,23 @@ import PostCreate from "./pages/posts/post-create.tsx";
 import ArticleIcon from "@mui/icons-material/Article";
 import PersonIcon from "@mui/icons-material/Person";
 import { HomePage } from "./pages/homepage.tsx";
+import { authProvider } from "./pages/authProvider.ts";
 
 export const App = () => (
-  <Admin layout={Layout} dataProvider={dataProvider} dashboard={HomePage}>
-    <Resource icon={ArticleIcon} name="posts" list={PostList} show={PostShow} edit={PostEdit} create={PostCreate} />
+  <Admin
+    layout={Layout}
+    dataProvider={dataProvider}
+    dashboard={HomePage}
+    authProvider={authProvider}
+  >
+    <Resource
+      icon={ArticleIcon}
+      name="posts"
+      list={PostList}
+      show={PostShow}
+      edit={PostEdit}
+      create={PostCreate}
+    />
     <Resource icon={PersonIcon} name="users" list={UserList} show={UserShow} />
   </Admin>
 );

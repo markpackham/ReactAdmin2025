@@ -3,7 +3,7 @@ import {AuthProvider} from "react-admin";
 export const authProvider: AuthProvider = {
   // Runs when user attempts to login
   login: ({username, password}) => {
-    if(username === 'admin' && 'password' === 'password'){
+    if(username === 'admin' && password === 'password'){
     localStorage.setItem('username', username);
     return Promise.resolve();
     } else {
@@ -18,7 +18,7 @@ export const authProvider: AuthProvider = {
   },
   // Runs when API returns an error
   checkError: ({status}:{status:number}) => {
-    if(status === 401 || status 403){
+    if(status === 401 || status === 403){
       localStorage.removeItem('username');
       return Promise.reject();
     }
@@ -30,4 +30,5 @@ export const authProvider: AuthProvider = {
     return localStorage.getItem('username') ? Promise.resolve() : Promise.reject();
   },
   // Runs when user navigates to a new location to check for permissions or rules
+  getPermissions: () => Promise.resolve()
 };
